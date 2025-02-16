@@ -11,5 +11,8 @@
 - [Koo0ki](https://github.com/koo0ki)
 - [Lazur](https://github.com/Lazur1082)
 
+# Designer
+- [Cutiessa](https://github.com/Cutiessa)
+
 # Start the application
 To run the application, type `npm start` in the console.
