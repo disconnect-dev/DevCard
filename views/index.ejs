@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kooki</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js"></script>
+</head>
+<body>
+<div class="blur-background"></div>
+<div class="container">
+    <div class="main">
+        <div class="avatar">
+            <img src="<%=avatar%>" alt="Avatar" width="140"> <!-- Изображение аватара -->
+        </div>
+        <div class="username">
+            <h1 class="name"><%=name%></h1>
+            <h3 class="lastname">@<%=lastname%></h3>
+            <div class="social">
+                <a class="social-link" href="<%=telegram%>">
+                    <img src="./assets/images/telegram.png" width="40" height="40" alt="Telegram"> <!-- Используем img вместо svg для корректного отображения -->
+                </a>
+                <a class="social-link" href="<%=github%>">
+                    <img src="./assets/images/github.png" width="40" height="40" alt="GitHub"> <!-- Используем img вместо svg для корректного отображения -->
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal" class="modal">
+    <div class="modal-container">
+        <div class="modal-content">
+            <button id="close-modal" class="close-modal">X</button>
+            <h1><%=title%></h1>
+            <button class="link" onclick="window.location.href='<%=url%>'"><%=button%></button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
