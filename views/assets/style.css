@@ -81,6 +81,15 @@ body {
 
 .social img {
     margin-right: 10px;
+    border: 2px solid #262930;
+    background-color: #1E1E1E;
+    border-radius: 15px;
+    padding: 5px;
+    transition: transform 0.3s;
+}
+
+.social img:hover {
+    transform: scale(1.1);
 }
 
 .social img:last-child {
