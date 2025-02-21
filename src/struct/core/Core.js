@@ -22,15 +22,15 @@ export class Core {
         for (const folder of files) {
             const folderStats = await fs.stat(`./src/app/pages/` + folder);
             if (folderStats.isDirectory()) {
-                const subFiles = await fs.readdir(`./src/app/pages/`);
+                const subFiles = await fs.readdir(`./src/app/pages/` + folder);
                 for (const file of subFiles) {
                     if (!file.endsWith('.js')) continue;
                     const PageClass = (await import(`../../app/pages/${folder}/${file}`)).default;
                     const page = new PageClass();
                     
-                    app.use(folder + page.path, (req, res) => page.handler(req, res));
+                    app.use('/' + folder + page.path, (req, res) => page.handler(req, res));
                     
-                    info(`Registered page ${folder + page.path}`);
+                    info(`Registered page ${'/' + folder + page.path}`);
                 }
             }
         }
