@@ -1,157 +1,162 @@
 body {
-    margin: 0; /* Убираем отступы */
-    height: 100vh; /* Занимаем всю высоту экрана */
-    display: flex; /* Используем Flexbox для выравнивания */
-    justify-content: center; /* Центрируем по горизонтали */
-    align-items: center; /* Центрируем по вертикали */
-    overflow: hidden; /* Скрываем прокрутку */
-    position: relative; /* Устанавливаем относительное позиционирование */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background: #09090b;
 }
 
 .blur-background {
-    position: absolute; /* Абсолютное позиционирование для фона */
-    top: 0; /* Устанавливаем верхнюю границу */
-    left: 0; /* Устанавливаем левую границу */
-    width: 100%; /* Ширина 100% */
-    height: 100%; /* Высота 100% */
-    background-image: url('images/background.png'); /* Замените на ваш фон */
-    background-size: cover; /* Заполняем фон */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -115%);
+    width: 650px;
+    height: 650px;
+    background-color: #6A0DAD;
+    opacity: 0.5;
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(10rem);
 }
 
 .container {
-    position: relative; /* Устанавливаем относительное позиционирование для контейнера */
-    z-index: 2; /* Устанавливаем z-index выше фона */
-    background-color: rgba(0, 0, 0, 0.27); /* Полупрозрачный фон для контейнера */
-    border: 0.7px solid rgba(28, 26, 29, 1); /* Рамка контейнера */
-    padding: 20px; /* Отступы внутри контейнера */
-    border-radius: 20px; /* Закругленные края */
-    display: flex; /* Используем Flexbox для контейнера */
-    flex-direction: row; /* Устанавливаем вертикальное направление */
-    align-items: center; /* Центрируем элементы по горизонтали */
-    color: white; /* Цвет текста */
-    font-family: 'JetBrains Mono', serif; /* Шрифт */
-    height: auto; /* Автоматическая высота */
-    width: 700px; /* Ширина контейнера */
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.27);
+    border: 0.7px solid rgba(28, 26, 29, 1);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    font-family: 'JetBrains Mono', serif;
+    height: auto;
+    width: 700px;
 }
 
 .name {
-    margin: 3px 0; /* Устанавливаем одинаковые отступы сверху и снизу */
-    font-weight: normal; /* Нормальное начертание шрифта */
+    margin: 3px 0;
+    font-weight: normal;
 }
 
 .lastname {
-    font-weight: normal; /* Нормальное начертание шрифта */
-    margin: 3px 0; /* Устанавливаем одинаковые отступы сверху и снизу */
-    color: rgba(43, 38, 43, 1); /* Цвет текста */
+    font-weight: normal;
+    margin: 3px 0;
+    color: rgba(43, 38, 43, 1);
 }
 
 .avatar {
-    margin-right: 18px; /* Отступ справа для аватара */
-    border-radius: 20px; /* Закругление для контейнера аватара */
+    margin-right: 18px;
+    border-radius: 20px;
 }
 
 .avatar img {
-    border-radius: 20px; /* Закругление для изображения аватара */
-    width: 100%; /* Убедитесь, что изображение занимает всю ширину контейнера */
-    height: auto; /* Автоматическая высота для сохранения пропорций */
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
 }
 
 .main {
-    position: relative; /* Устанавливаем относительное позиционирование для контейнера */
-    z-index: 2; /* Устанавливаем z-index выше фона */
-    padding: 20px; /* Отступы внутри контейнера */
-    display: flex; /* Используем Flexbox для контейнера */
-    flex-direction: row; /* Устанавливаем вертикальное направление */
-    align-items: center; /* Центрируем элементы по горизонтали */
-    color: white; /* Цвет текста */
-    font-family: 'JetBrains Mono', serif; /* Шрифт */
-    height: auto; /* Автоматическая высота */
-    width: auto; /* Автоматическая ширина */
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    font-family: 'JetBrains Mono', serif;
+    height: auto;
+    width: auto;
 }
 
 .social {
-    display: flex; /* Используем Flexbox для размещения ссылок */
-    margin-top: 20px; /* Отступ сверху для ссылок */
+    display: flex;
+    margin-top: 20px;
 }
 
 .social img {
-    margin-right: 10px; /* Устанавливаем отступ справа между изображениями */
+    margin-right: 10px;
 }
 
 .social img:last-child {
-    margin-right: 1; /* Убираем отступ у последнего изображения */
+    margin-right: 1;
 }
 
 .social-link:hover {
-    animation: bounce 1s; /* Анимация при наведении */
+    animation: bounce 1s;
 }
 
 .modal {
-    display: block; /* Отображаем модальное окно */
-    position: fixed; /* Фиксированное позиционирование */
-    bottom: 20px; /* Отступ от нижней границы */
-    right: 20px; /* Отступ от правой границы */
-    z-index: 1000; /* Высокий z-index для отображения поверх других элементов */
-    opacity: 0; /* Начальная прозрачность */
-    transform: translateY(20px); /* Начальное смещение вниз */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавный переход */
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .modal.show {
-    opacity: 1; /* Полная непрозрачность */
-    transition-duration: 1s; /* Длительность перехода */
-    transform: translateY(0); /* Возвращаем на место */
+    opacity: 1;
+    transition-duration: 1s;
+    transform: translateY(0);
 }
 
 .modal-container {
-    background-color: rgba(0, 0, 0, 0.27); /* Полупрозрачный фон для контейнера модального окна */
-    border: 0.7px solid rgba(28, 26, 29, 1); /* Рамка контейнера модального окна */
-    border-radius: 10px; /* Закругленные края */
-    padding: 20px; /* Отступы внутри контейнера */
-    color: white; /* Цвет текста */
-    font-family: 'JetBrains Mono', serif; /* Шрифт */
-    font-size: 10px; /* Размер шрифта */
-    margin: 10px; /* Отступы вокруг контейнера */
+    background-color: rgba(0, 0, 0, 0.27);
+    border: 0.7px solid rgba(28, 26, 29, 1);
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    font-family: 'JetBrains Mono', serif;
+    font-size: 10px;
+    margin: 10px;
 }
 
 .close-modal {
-    background: none; /* Без фона */
-    border: none; /* Без рамки */
-    color: white; /* Цвет текста */
-    font-size: 20px; /* Размер шрифта */
-    cursor: pointer; /* Курсор в виде указателя */
-    position: absolute; /* Абсолютное позиционирование */
-    top: 10px; /* Отступ сверху */
-    right: 10px; /* Отступ справа */
-    padding: 20px; /* Отступы внутри кнопки */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 20px;
 }
 
 .link {
-    width: 300px; /* Ширина ссылки */
-    height: 40px; /* Высота ссылки */
-    border: 1px solid rgba(17, 20, 28, 1); /* Рамка ссылки */
-    background-color: rgba(0, 0, 0, 0.27); /* Полупрозрачный фон для ссылки */
-    border-radius: 10px; /* Закругленные края */
-    color: white; /* Цвет текста */
-    font-weight: 500; /* Полужирное начертание шрифта */
-    font-family: 'JetBrains Mono', serif; /* Шрифт */
-    cursor: pointer; /* Курсор в виде указателя */
+    width: 300px;
+    height: 40px;
+    border: 1px solid rgba(17, 20, 28, 1);
+    background-color: rgba(0, 0, 0, 0.27);
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    font-family: 'JetBrains Mono', serif;
+    cursor: pointer;
 }
 
 @keyframes bounce {
     0%, 20%, 60%, 100% {
-        transform: translateY(0); /* Начальная позиция */
+        transform: translateY(0);
     }
 
     40% {
-        transform: translateY(-12px); /* Смещение вверх */
+        transform: translateY(-12px);
     }
 
     80% {
-        transform: translateY(-10px); /* Смещение вверх */
+        transform: translateY(-10px);
     }
 }
 
 .link:hover {
-    animation: bounce 1s; /* Анимация при наведении */
+    animation: bounce 1s;
 }
