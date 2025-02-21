@@ -1,7 +1,7 @@
 import fetch from "node-fetch"
 
 export const getAvatar = (user) => {
-    return `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}??size=4096`
+    return `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}?size=128`
 }
 
 export const getNickname = (user) => {

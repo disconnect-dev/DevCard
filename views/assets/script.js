@@ -1,6 +1,6 @@
 window.onload = function() {
     const modal = document.querySelector('.modal');
-    modal.classList.add('show'); // Добавляем класс для показа модального окна
+    modal.classList.add('show'); 
 }
 
 document.addEventListener('DOMContentLoaded', () => {
