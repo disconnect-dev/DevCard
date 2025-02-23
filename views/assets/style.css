@@ -23,6 +23,33 @@ body {
     filter: blur(10rem);
 }
 
+.date {
+    position: absolute;
+    margin: 20px 0;
+    color: #8d25d6;
+    font-weight: normal;
+    font-family: 'JetBrains Mono', serif;
+    text-align: center;
+    top: 90px;
+    left: 50%;
+    font-size: 25px;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.time {
+    position: absolute;
+    margin: 20px 0;
+    color: #8d25d6;
+    font-weight: normal;
+    font-family: 'JetBrains Mono', serif;
+    text-align: center;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
 .container {
     position: relative;
     z-index: 2;
@@ -60,6 +87,27 @@ body {
     width: 100%;
     height: auto;
     pointer-events: none;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    color: #ffffff;
+    font-weight: normal;
+    font-family: 'JetBrains Mono', serif;
+    text-align: center;
+    z-index: 1;
+}
+.footer h1 {
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.footer span {
+    color: #8d25d6;
 }
 
 .main {
