@@ -62,7 +62,6 @@ body {
     align-items: center;
     color: white;
     font-family: 'JetBrains Mono', serif;
-    height: auto;
     width: 700px;
 }
 
@@ -100,10 +99,6 @@ body {
     font-family: 'JetBrains Mono', serif;
     text-align: center;
     z-index: 1;
-}
-.footer h1 {
-    color: #ffffff;
-    font-size: 25px;
 }
 
 .footer span {
@@ -232,5 +227,9 @@ body {
         border-radius: 50%;
         z-index: 0;
         filter: blur(10rem);
+    }
+
+    .container {
+        width: 80%; 
     }
 }
