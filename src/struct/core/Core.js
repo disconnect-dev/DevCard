@@ -2,6 +2,8 @@ import express from 'express';
 import { rateLimit } from 'express-rate-limit';
 import { promises as fs } from 'fs';
 import { info } from '../helpers/Logs.js';
+import { getAvatar, getInfo, getNickname } from '../helpers/Utils.js';
+import { github, id, notification, telegram } from '../../config.js'
 
 export class Core {
     constructor() {}
@@ -56,11 +58,27 @@ export class Core {
 
         app.set('view engine', 'ejs');
 
-        app.get('/', (req, res) => {
-            res.redirect('/main');
+        app.get('/', async (req, res) => {
+            const userData = (await getInfo(id)).discord_user
+
+            res.render('index', {
+                name: getNickname(userData),
+                lastname: userData.username,
+                avatar: getAvatar(userData),
+                github,
+                telegram,
+                title: notification.title,
+                button: notification.button,
+                url: notification.url
+            });
         });
 
         await this.registerPages(app);
+        
+        app.use((req, res) => {
+            res.redirect('/404')
+        });
+
 
         app.listen(port, () => {
             info(`Bio start in port ${port}`);

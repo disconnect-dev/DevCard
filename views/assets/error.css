@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background: #09090b;
+    font-family: 'JetBrains Mono', serif;
+}
+
+.blur-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    height: 650px;
+    background-color: #6A0DAD;
+    opacity: 0.5;
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(10rem);
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 20px;
+}
+
+.error-container {
+    background-color: rgba(0, 0, 0, 0.27);
+    border: 0.7px solid rgba(28, 26, 29, 1);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+
+.error-code {
+    font-size: 120px;
+    margin: 0;
+    color: #8d25d6;
+    font-weight: normal;
+}
+
+.error-message {
+    font-size: 28px;
+    margin: 20px 0;
+    font-weight: normal;
+}
+
+.error-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.link {
+    width: 200px;
+    height: 40px;
+    border: 1px solid rgba(17, 20, 28, 1);
+    background-color: rgba(0, 0, 0, 0.27);
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    font-family: 'JetBrains Mono', serif;
+    cursor: pointer;
+}
+
+.link:hover {
+    animation: bounce 1s;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    color: #ffffff;
+    font-weight: normal;
+    text-align: center;
+    z-index: 1;
+}
+
+.footer span {
+    color: #8d25d6;
+}
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-12px);
+    }
+    80% {
+        transform: translateY(-10px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .blur-background {
+        width: 300px;
+        height: 300px;
+        transform: translate(-50%, -50%);
+    }
+
+    .error-container {
+        padding: 20px;
+    }
+
+    .error-code {
+        font-size: 80px;
+    }
+
+    .error-message {
+        font-size: 20px;
+    }
+
+    .error-description {
+        font-size: 14px;
+    }
+} 
