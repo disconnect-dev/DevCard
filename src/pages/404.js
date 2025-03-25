@@ -1,6 +1,6 @@
-import { id } from "../../config.js";
-import { BasePage } from "../../struct/base/BasePage.js";
-import { getInfo, getNickname } from "../../struct/helpers/Utils.js";
+import { id } from "../config.js";
+import { BasePage } from "../struct/base/BasePage.js";
+import { getInfo, getNickname } from "../struct/helpers/Utils.js";
 
 export default class MainPage extends BasePage {
     constructor() {

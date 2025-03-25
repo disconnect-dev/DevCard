@@ -4,16 +4,23 @@ import { promises as fs } from 'fs';
 import { info } from '../helpers/Logs.js';
 import { getAvatar, getInfo, getNickname } from '../helpers/Utils.js';
 import { github, id, notification, telegram } from '../../config.js'
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 
 export class Core {
-    constructor() {}
+    constructor() {
+        this.dirs = {
+            pages: '../../pages/',
+            current: dirname(fileURLToPath(import.meta.url))
+        }
+    }
 
     async registerPages(app) {
-        const files = await fs.readdir('./src/app/pages');
+        const files = await fs.readdir(join(this.dirs.current, this.dirs.pages));
         
         for (const file of files) {
             if (!file.endsWith('.js')) continue;
-            const PageClass = (await import(`../../app/pages/${file}`)).default;
+            const PageClass = (await import(`${this.dirs.pages}${file}`)).default;
             const page = new PageClass();
             
             app.use(page.path, (req, res) => page.handler(req, res));
@@ -22,12 +29,12 @@ export class Core {
         }
 
         for (const folder of files) {
-            const folderStats = await fs.stat(`./src/app/pages/` + folder);
+            const folderStats = await fs.stat(join(this.dirs.current, this.dirs.pages, folder));
             if (folderStats.isDirectory()) {
-                const subFiles = await fs.readdir(`./src/app/pages/` + folder);
+                const subFiles = await fs.readdir(this.dirs.current, this.dirs.pages, folder);
                 for (const file of subFiles) {
                     if (!file.endsWith('.js')) continue;
-                    const PageClass = (await import(`../../app/pages/${folder}/${file}`)).default;
+                    const PageClass = (await import(`${this.dirs.pages}${folder}/${file}`)).default;
                     const page = new PageClass();
                     
                     app.use('/' + folder + page.path, (req, res) => page.handler(req, res));
