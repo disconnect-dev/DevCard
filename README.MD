@@ -1,5 +1,5 @@
 # Example
-blob:https://imgur.com/c78e402a-da8d-4b84-8e1b-ebb54df86e6d
+https://i.imgur.com/UdqfXlJ.png
 
 # Starting
 1. Download the repository to your computer.
