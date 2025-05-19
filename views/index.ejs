@@ -3,47 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=name%></title>
+    <title><%=name%> | Разработчик</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     </style>
     <link rel="stylesheet" href="assets/style.css">
     <script src="assets/script.js"></script>
 </head>
 <body>
-<div class="blur-background"></div>
-<h1 class="time" id="time"></h1>
-<h1 class="date" id="date"></h1>
-<div class="container">
-    <div class="main">
-        <div class="avatar">
-            <img src="<%=avatar%>" alt="Avatar" width="140"> 
+    <div class="blur-background"></div>
+    
+    <div class="datetime">
+        <div class="time" id="time"></div>
+        <div class="date" id="date"></div>
+    </div>
+    
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="avatar">
+                <img src="<%=avatar%>" alt="Avatar">
+            </div>
+            
+            <div class="user-info">
+                <h1 class="name"><%=name%></h1>
+                <h3 class="username">@<%=lastname%></h3>
+                
+                <div class="bio">
+                    Full-stack разработчик с опытом создания современных веб-приложений. 
+                    Специализируюсь на JavaScript, React и Node.js,.
+                </div>
+                
+                <div class="tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">UI/UX</span>
+                </div>
+                
+                <div class="social">
+                    <a class="social-link" href="<%=telegram%>">
+                        <img src="./assets/images/telegram.png" alt="Telegram">
+                    </a>
+                    <a class="social-link" href="<%=github%>">
+                        <img src="./assets/images/github.png" alt="GitHub">
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="username">
-            <h1 class="name"><%=name%></h1>
-            <h3 class="lastname">@<%=lastname%></h3>
-            <div class="social">
-                <a class="social-link" href="<%=telegram%>">
-                    <img src="./assets/images/telegram.png" width="40" height="40" alt="Telegram">
-                </a>
-                <a class="social-link" href="<%=github%>">
-                    <img src="./assets/images/github.png" width="40" height="40" alt="GitHub"> 
-                </a>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">2+</div>
+                <div class="stat-label">Опыт работы</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">10+</div>
+                <div class="stat-label">Проекты</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="commit-count">0</div>
+                <div class="stat-label">Коммиты</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">18+</div>
+                <div class="stat-label">Клиенты</div>
+            </div>
+        </div>
+        
+        <div class="project-section">
+            <h2 class="section-title">Избранные проекты</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3 class="project-name">Проект 1</h3>
+                    <p class="project-description">...</p>
+                    <a href="#" class="project-link">Подробнее →</a>
+                </div>
+                <div class="project">
+                    <h3 class="project-name">Проект 2</h3>
+                    <p class="project-description">...</p>
+                    <a href="#" class="project-link">Подробнее →</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div id="modal" class="modal">
-    <div class="modal-container">
-        <div class="modal-content">
-            <button id="close-modal" class="close-modal">X</button>
-            <h1><%=title%></h1>
-            <button class="link" onclick="window.location.href='<%=url%>'"><%=button%></button>
+    
+    <div id="modal" class="modal">
+        <div class="modal-container">
+            <div class="modal-content">
+                <button id="close-modal" class="close-modal">×</button>
+                <h1><%=title%></h1>
+                <a href="<%=url%>" class="link"><%=button%></a>
+            </div>
         </div>
     </div>
-</div>
-<div class="footer">
-    Master of the Digital Realm <span><%=name%></span>
-</div>
+    
+    <div class="footer">
+        Frok by <span>disconnect-dev</span>
+    </div>
 </body>
 </html>
