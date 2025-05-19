@@ -1,13 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     position: relative;
     background: #09090b;
-    font-family: 'JetBrains Mono', serif;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
 }
 
 .blur-background {
@@ -15,65 +25,77 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 650px;
-    height: 650px;
-    background-color: #6A0DAD;
-    opacity: 0.5;
+    width: 800px;
+    height: 800px;
+    background: linear-gradient(135deg, #6A0DAD 0%, #0A0A0A 100%);
+    opacity: 0.35;
     border-radius: 50%;
     z-index: 0;
-    filter: blur(10rem);
-}
-
-.container {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 700px;
-    margin: 0 20px;
+    filter: blur(120px);
 }
 
 .error-container {
-    background-color: rgba(0, 0, 0, 0.27);
-    border: 0.7px solid rgba(28, 26, 29, 1);
-    border-radius: 20px;
-    padding: 40px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(18, 18, 20, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 50px 40px;
     text-align: center;
-    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .error-code {
     font-size: 120px;
+    font-weight: 700;
+    color: rgba(106, 13, 173, 0.9);
     margin: 0;
-    color: #8d25d6;
-    font-weight: normal;
+    line-height: 1;
+    text-shadow: 0 2px 10px rgba(106, 13, 173, 0.4);
+    letter-spacing: -2px;
 }
 
 .error-message {
     font-size: 28px;
+    font-weight: 600;
     margin: 20px 0;
-    font-weight: normal;
+    color: #ffffff;
 }
 
 .error-description {
-    color: rgba(255, 255, 255, 0.7);
     font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 30px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .link {
+    display: inline-block;
     width: 200px;
-    height: 40px;
-    border: 1px solid rgba(17, 20, 28, 1);
-    background-color: rgba(0, 0, 0, 0.27);
-    border-radius: 10px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border: none;
+    background: linear-gradient(135deg, rgba(106, 13, 173, 0.8) 0%, rgba(70, 8, 115, 0.8) 100%);
+    border-radius: 8px;
     color: white;
+    font-size: 15px;
     font-weight: 500;
-    font-family: 'JetBrains Mono', serif;
     cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .link:hover {
-    animation: bounce 1s;
+    background: linear-gradient(135deg, rgba(106, 13, 173, 1) 0%, rgba(70, 8, 115, 1) 100%);
+    box-shadow: 0 5px 15px rgba(106, 13, 173, 0.3);
+    transform: translateY(-3px);
 }
 
 .footer {
@@ -81,49 +103,37 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 20px 0;
-    color: #ffffff;
-    font-weight: normal;
+    padding: 15px 0;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
     text-align: center;
     z-index: 1;
 }
 
 .footer span {
-    color: #8d25d6;
-}
-
-@keyframes bounce {
-    0%, 20%, 60%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-12px);
-    }
-    80% {
-        transform: translateY(-10px);
-    }
+    color: rgba(106, 13, 173, 0.8);
 }
 
 @media only screen and (max-width: 480px) {
     .blur-background {
-        width: 300px;
-        height: 300px;
-        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
     }
-
+    
     .error-container {
-        padding: 20px;
+        max-width: 90%;
+        padding: 30px 20px;
     }
-
+    
     .error-code {
-        font-size: 80px;
+        font-size: 90px;
     }
-
+    
     .error-message {
-        font-size: 20px;
+        font-size: 22px;
     }
-
+    
     .error-description {
         font-size: 14px;
     }
-} 
+}
