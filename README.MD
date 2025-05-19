@@ -1,6 +1,6 @@
 # Example 
 
-https://i.imgur.com/UdqfXlJ.png 
+![BIO](https://i.imgur.com/UdqfXlJ.png)
 
 # Starting 
 
