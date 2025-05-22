@@ -11,3 +11,6 @@
 3. Install the npm packages via the `npm install` command 
 
 4. Fill in the `src/config.js`
+
+# Start the application
+To run the application, type `npm start` in the console.
